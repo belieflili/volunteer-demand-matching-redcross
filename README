@@ -20,6 +20,26 @@ Designed for non-profit retail environments (e.g. Red Cross op shops):
 - Excel template
 - Prompt pack
 - Sample data
+## How to use
+
+1. Record daily shift information in the Excel template  
+   (`excel/volunteer_shift_template.xlsx`):
+   - Fill in footfall level (Low / Med / High)
+   - Record number of volunteers by skill for each time slot
+
+2. Review staffing rules in the `Rules` sheet:
+   - Minimum headcount per footfall level
+   - Must-have skills for each scenario
+
+3. Use the prompts in the `prompts/` folder to generate decision support:
+   - Flag staffing risks (Green / Amber / Red)
+   - Identify missing skills
+   - Suggest minimum headcount and skill mix
+
+4. A human coordinator reviews the AI output and makes the final decision.
+
+This workflow is designed for decision support only and does not automate rostering.
+
 
 ## Responsible AI
 Human-in-the-loop, data minimisation, transparent assumptions.
