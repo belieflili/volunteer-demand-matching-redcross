@@ -1,0 +1,4 @@
+Footfall,Min_Total,MustHave
+Low,2,Cashier>=1
+Med,3,Cashier>=1;ShopFloor>=1
+High,4,Cashier>=1;Sorting>=1;Donations>=1
