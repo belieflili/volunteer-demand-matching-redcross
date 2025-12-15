@@ -1,0 +1,25 @@
+# AI-assisted Volunteer Demand & Shift Decision Support
+
+Explainable, human-in-the-loop decision support for volunteer staffing.
+This project flags staffing risks (Green / Amber / Red) and highlights skill gaps
+based on simple footfall and skill coverage data.
+
+## Use case
+Designed for non-profit retail environments (e.g. Red Cross op shops):
+- Two daily slots: 09:00–13:00, 13:00–17:00
+- Skills: Cashier, Sorting, Frontdesk, Donations processing, Shop floor
+
+## What this is (and is not)
+- ✔ Decision support only
+- ✔ Explainable rules + AI summaries
+- ✘ No automated rostering
+- ✘ No personal data
+
+## Contents
+- Process diagram
+- Excel template
+- Prompt pack
+- Sample data
+
+## Responsible AI
+Human-in-the-loop, data minimisation, transparent assumptions.
