@@ -1,14 +1,29 @@
-## Prompt 01 - Risk flagging (decision support only)
+Purpose
 
-You are assisting a volunteer coordinator.
-Do NOT create an automatic roster. Provide decision support only.
+Identify operational risk signals based on simple staffing rules and observed shifts.
 
-Input:
-- Shift log (footfall + skill counts)
-- Staffing rules (minimum total and must-have skills)
+Input
+Input	Description
+Staffing rules	Minimum headcount, must-have skills (text rules)
+Shift observations	Actual staffing, workload, incidents (summary level)
+Task
 
-Task:
-1) Label each time slot as Green/Amber/Red risk
-2) Identify missing skills
-3) Suggest minimum headcount and skill mix
-4) Explain briefly (1–2 sentences per slot)
+Flag each time slot as Green / Amber / Red
+
+Identify skill-related risk causes (no people)
+
+Output
+Output	Description
+Risk flags	G / A / R by time slot
+Risk reasons	Missing skill / single-point skill / overload
+Identified skill gaps	Skill types only
+Prompt
+You are assisting an operational risk team.
+
+Based on the provided staffing rules and observed shift conditions:
+- Flag each time slot as Green, Amber, or Red.
+- Identify skill-related risk causes only.
+- Do not assess individuals or create staffing plans.
+
+Keep signals simple, explainable, and suitable for review.
+
