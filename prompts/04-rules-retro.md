@@ -1,17 +1,31 @@
-## Prompt 04 - Staffing rules retrospective review
+Purpose
 
-You are reviewing simple staffing rules used for decision support.
+Validate whether existing staffing rules worked in real operations.
 
-Input:
-- Staffing rules (minimum headcount and must-have skills)
-- Recent shift outcomes and risk flags
+Input
+Input	Description
+Staffing rules	Current rule set
+Shift outcomes	Risk flags + incidents
+Task
 
-Task:
-1) Identify which rules worked well
-2) Highlight any rules that may be too strict or too relaxed
-3) Suggest small, explainable adjustments
+Review rules against outcomes
 
-Constraints:
-- Keep rules simple and transparent
-- Avoid complex models or automation
+Identify rules that are too strict or too loose
 
+Suggest small, explainable adjustments
+
+Output
+Output	Description
+Effective rules	Worked as intended
+Problematic rules	Too strict / too relaxed
+Rule adjustments	Text-level changes only
+Prompt
+You are reviewing simple staffing rules for operational risk control.
+
+Based on recent shift outcomes:
+- Identify which rules worked well.
+- Highlight rules that appear too strict or too relaxed.
+- Suggest small, explainable adjustments.
+
+Do not introduce complex models or automation.
+Your output should inform the next rule revision only.
