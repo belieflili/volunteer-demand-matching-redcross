@@ -1,29 +1,75 @@
-Purpose
+Prompt 01 — Risk Flagging (Final, Portfolio Version)
+🎯 Purpose
 
-Identify operational risk signals based on simple staffing rules and observed shifts.
+Identify operational risk signals for each shift based on simple, explainable rules and observed conditions.
+This prompt does not make staffing decisions and does not evaluate individuals.
 
-Input
-Input	Description
-Staffing rules	Minimum headcount, must-have skills (text rules)
-Shift observations	Actual staffing, workload, incidents (summary level)
-Task
+📥 Input
+Data source
 
-Flag each time slot as Green / Amber / Red
+01_risk_flags.xlsx
+Table: tbl_risk_flags
 
-Identify skill-related risk causes (no people)
+Fields used
+Field	Description
+Date	Shift date
+Time Slot	Morning / Midday / Afternoon / Evening
+Planned Headcount	Required staffing level
+Actual Headcount	Observed staffing level
+Must-have Skills Missing	Yes / No
+Single-point Skill Risk	Yes / No
+Workload Level	Low / Normal / High
+🧠 Risk Flagging Logic (Explainable Rules)
 
-Output
-Output	Description
-Risk flags	G / A / R by time slot
-Risk reasons	Missing skill / single-point skill / overload
-Identified skill gaps	Skill types only
-Prompt
-You are assisting an operational risk team.
+For each time slot, apply the following logic:
 
-Based on the provided staffing rules and observed shift conditions:
-- Flag each time slot as Green, Amber, or Red.
-- Identify skill-related risk causes only.
-- Do not assess individuals or create staffing plans.
+1️⃣ Identify risk signals
 
-Keep signals simple, explainable, and suitable for review.
+A shift is considered at risk if any of the following is true:
 
+Must-have Skills Missing = Yes
+
+Single-point Skill Risk = Yes
+
+These conditions indicate capability-related risk, not individual performance.
+
+2️⃣ Assign risk level
+Condition	Risk Flag
+Risk signal present AND Workload Level = High	Red
+Risk signal present AND Workload Level ≠ High	Amber
+No risk signal present	Green
+3️⃣ Interpretation guidelines
+
+Green: Staffing and skills are sufficient for the observed workload.
+
+Amber: Potential risk detected; monitoring or minor adjustment may be required.
+
+Red: High likelihood of operational failure if unaddressed.
+
+Risk flags are signals for human review, not automated decisions.
+
+📤 Output
+
+For each shift record:
+
+Risk Flag: Green / Amber / Red
+
+Risk Reason: Short, descriptive explanation (e.g. Single-point skill risk; High workload)
+
+🚫 Explicit constraints
+
+Do not rank or assess individuals.
+
+Do not generate rosters or staffing changes.
+
+Keep all rules simple, transparent, and auditable.
+
+🧩 Role in the system
+
+Prompt 01 provides the risk signal layer for:
+
+Prompt 02 (targeted support recommendations)
+
+Prompt 03 (manager operational summary)
+
+Prompt 04 (staffing rule retrospective review)
